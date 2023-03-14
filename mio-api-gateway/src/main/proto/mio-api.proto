@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "com.mio.mioapigateway.proto";
+option java_multiple_files = true;
+option java_outer_classname = "MioApiProto";
+option objc_class_prefix = "HLW";
+
+service mioApi {
+  rpc GetSecretKey(Request) returns (Response) {}
+}
+
+message Request {
+  string requestData = 1;
+}
+
+message Response {
+  string responseData = 1;
+}

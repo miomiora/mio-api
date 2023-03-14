@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option go_package = ".;proto";
+
+// todo 调用接口统计剩余次数
+service mioApi {
+  rpc GetSecretKey(Request) returns (Response) {}
+}
+
+message Request {
+  string requestData = 1;
+}
+
+message Response {
+  string responseData = 1;
+}

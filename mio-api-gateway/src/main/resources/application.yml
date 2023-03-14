@@ -1,0 +1,21 @@
+server:
+  port: 89
+spring:
+  cloud:
+    gateway:
+      default-filters:
+        - AddResponseHeader=source, mio
+      routes:
+        - id: api_route
+          uri: http://localhost:91
+          predicates:
+            - Path=/api/**
+          filters:
+            - AddRequestHeader=mio,accept
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          gateway: trace
+

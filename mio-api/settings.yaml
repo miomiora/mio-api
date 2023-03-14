@@ -1,0 +1,26 @@
+mysql:
+  # 数据库登录用户
+  username: api
+  # 数据库密码
+  password: 123321
+  host: 127.0.0.1
+  port: 92
+  # 数据库名字
+  dbname: mio-api
+  timeout: 10s
+  maxConn: 200
+  maxOpen: 200
+
+gin:
+  host: 127.0.0.1
+  port: 90
+
+redis:
+  host: 127.0.0.1
+  port: 6379
+  password:
+  DB : 0
+
+grpc:
+  host: 127.0.0.1
+  port: 2175
