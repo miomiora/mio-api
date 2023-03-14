@@ -10,9 +10,9 @@ import (
 func ValidHeader(c *gin.Context) {
 	header := c.GetHeader("mio")
 	fmt.Println("header: ", header)
-	if header == "accept" {
-		c.Next()
+	if header != "accept" {
+		c.JSON(http.StatusForbidden, utils.ResponseError(utils.NoAuth, "非法的访问"))
+		c.Abort()
 	}
-	c.JSON(http.StatusForbidden, utils.ResponseError(utils.NoAuth, "非法的访问"))
-	c.Abort()
+	c.Next()
 }
